@@ -7,7 +7,7 @@ def do_ping_sweep(ip, num_of_host):
     ip_parts = ip.split('.')
     network_ip = ip_parts[0] + '.' + ip_parts[1] + '.' + ip_parts[2] + '.'
     scanned_ip = network_ip + str(int(ip_parts[3]) + num_of_host)
-    response = os.popen(f'ping -с 1 {scanned_ip}')
+    response = os.popen(f'ping -c 1 {scanned_ip}')
     res = response.readlines()
     print(f"[#] Result of scanning: {scanned_ip} [#]\n{res[2]}", end='\n')
 
