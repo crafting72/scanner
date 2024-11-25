@@ -9,7 +9,7 @@ def do_ping_sweep(ip, num_of_host):
     scanned_ip = network_ip + str(int(ip_parts[3]) + num_of_host)
     response = os.popen(f'ping -c 1 {scanned_ip}')
     res = response.readlines()
-    print(f"[#] Result of scanning: {scanned_ip} [#]\n{res[2]}", end='\n')
+    print(f"[#] Result of scanning: {scanned_ip} [#]\n{res[1]}", end='\n')
 
 def sent_http_request(target, method, headers=None, payload=None):
     headers_dict = dict()
